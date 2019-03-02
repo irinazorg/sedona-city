@@ -1,0 +1,133 @@
+.navigation {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navigation__item {
+  background-color: $main-accent-color;
+
+  &:nth-last-child(2) {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2), $main-accent-color 10px);
+  }
+
+  &--logo {
+    background-color: transparent;
+  }
+}
+
+.navigation__link {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+  border-bottom: 1px solid $main-accent-color-darker;
+  border-top: 1px solid $main-accent-color-lighter;
+  cursor: default;
+}
+
+.navigation__link[href] {
+  &:hover, &:focus {
+    background-color: $main-accent-color-medium;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: $main-accent-color-darker;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 56px;
+  }
+
+  .navigation__item {
+    background-color: #ffffff;
+
+    &:nth-last-child(2) {
+      background-image: none;
+    }
+
+    &--logo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: transparent;
+    }
+
+    &:nth-child(1) {
+      margin-right: 77px;
+    }
+
+    &:nth-child(2) {
+      margin-right: auto;
+    }
+
+    &:nth-child(3) {
+      margin-left: auto;
+    }
+
+    &:nth-child(4) {
+      margin-left: 49px;
+    }
+  }
+
+  .navigation__link {
+    font-size: 14px;
+    line-height: 36px;
+    color: #000000;
+    border: none;
+
+    &--active {
+      color: #766357;
+
+      &:hover, &:focus {
+        color: #604e43;
+      }
+
+      &:active {
+        color: #766357;
+        opacity: 0.3;
+      }
+    }
+  }
+
+  .navigation__link[href] {
+    &:hover, &:focus {
+      background-color: #ffffff;
+      color: $main-accent-color;
+    }
+
+    &:active {
+      background-color: #ffffff;
+      color: #000000;
+      opacity: 0.3;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .navigation__item {
+    &:nth-child(1) {
+      margin-right: 155px;
+    }
+
+    &:nth-child(4) {
+      margin-left: 137px;
+    }
+  }
+}

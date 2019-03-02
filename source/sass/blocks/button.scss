@@ -1,0 +1,21 @@
+.button {
+  display: block;
+  font-family: inherit;
+  text-align: center;
+  font-weight: 700;
+  padding: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: $main-accent-color;
+
+  &:hover, &:focus {
+    background-color: $main-accent-color-medium;
+  }
+
+  &:active {
+    background-color: $main-accent-color-darker;
+    color: rgba(255, 255, 255, 0.3);
+  }
+}

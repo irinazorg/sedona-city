@@ -1,0 +1,11 @@
+@media (min-width: $desktop-width) {
+  .page {
+    background-color: $light-background;
+  }
+
+  .page__wrapper {
+  	width: 1200px;
+  	margin: 0 auto;
+  	box-shadow: 12px 0 25px -4px rgba(0, 0, 0, 0.10), -12px 0 25px -4px rgba(0, 0, 0, 0.10);
+  }
+}
