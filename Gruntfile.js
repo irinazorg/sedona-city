@@ -27,6 +27,16 @@ module.exports = function(grunt) {
         }
       },
 
+    watch: {
+      options: {
+        livereload: true,
+      },
+      style: {
+        files: ['source/sass/**/*.scss', 'source/*.html', 'source/js/**/*.js'],
+        tasks: ['sass', 'postcss', 'csso', 'copy:html', 'copy:js']
+      }
+    }, 
+
       browserSync: {
       server: {
         bsFiles: {
@@ -46,16 +56,6 @@ module.exports = function(grunt) {
         }
       }
     },
-
-    watch: {
-      options: {
-        livereload: true,
-      },
-      style: {
-        files: ['source/sass/**/*.{scss,sass}'],
-        tasks: ['sass', 'postcss', 'csso']
-      }
-    }, 
 
     svgstore: { 
       options: {
@@ -106,8 +106,40 @@ module.exports = function(grunt) {
           ],
          dest: 'build'
         }] 
+      },
+
+      html: {
+        files: [{
+          expand: true,
+          cwd: 'source',
+          src: [
+            '*.html'
+          ],
+
+          dest: 'build'
+        }]
+      },
+
+      js: {
+        files: [{
+          expand: true,
+          cwd: 'source',
+          src: [
+            'js/**/*.js'
+          ],
+
+          dest: 'build'
+        }]
       }
     }, 
+
+    uglify: {
+      js: {
+        files: {
+          'build/js/script.min.js': ['build/js/script.js']
+        }
+      }
+    },
 
     clean: {
       build: ['build']
@@ -124,7 +156,18 @@ module.exports = function(grunt) {
     'sass',
     'postcss',
     'csso',
+    'uglify',
     'imagemin',
+    'svgstore'
+  ]);
+
+  grunt.registerTask('build-light', [
+    'clean',
+    'copy',
+    'sass',
+    'postcss',
+    'csso',
+    'uglify',
     'svgstore'
   ]);
 };

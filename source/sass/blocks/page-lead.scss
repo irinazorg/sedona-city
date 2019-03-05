@@ -9,6 +9,11 @@
   &--link {
     padding-bottom: 50px;
   }
+
+  &--inner {
+    padding-bottom: 40px;
+    border-bottom: 1px solid $border-light;
+  }
 }
 
 .page-lead__wrapper {
@@ -36,6 +41,10 @@
   line-height: 26px;
   text-transform: uppercase;
   text-align: center;
+
+  &--inner {
+    width: 280px;
+  }
 }
 
 .page-lead__link {
@@ -45,6 +54,11 @@
 @media (min-width: $tablet-width) {
   .page-lead {
     padding: 55px 20px 50px;
+
+    &--inner {
+      padding-bottom: 40px;
+      border-bottom: none;
+    }
   }
 
   .page-lead__wrapper {
@@ -57,5 +71,12 @@
     line-height: 25px;
     margin-bottom: 35px;
     color: $text-ccolor-black;
+  }
+
+  .page-lead__text {
+    &--inner {
+      width: 500px;
+      margin: 0 auto;
+    }
   }
 }

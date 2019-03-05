@@ -1,0 +1,176 @@
+.photos__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.photos__item {
+  width: 100%;
+  padding: 23px 0 10px;
+  border-bottom: 1px solid $border-light;
+}
+
+.photos__item-wrapper {
+  width: 280px;
+  margin: 0 auto;
+}
+
+.photos__photo {
+  width: 280px;
+  height: 280px;
+}
+
+.photos__title {
+  display: block;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $text-ccolor-black;
+}
+
+.photos__author {
+  display: block;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 3px;
+  color: $text-color-main;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.photos__interaction {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.photos__like {
+  width: 38px;
+  height: 44px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  
+  background-image: url("../img/icon-like.svg");
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+.photos__like-amount {
+  padding: 0;
+  margin: 0;
+  margin-top: 7px;
+
+  color: $text-ccolor-black;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+@media (min-width: $tablet-width) {
+  .photos__list {
+    width: 648px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .photos__item {
+    width: 324px;
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+
+    &--best {
+      width: 648px;
+    }
+  }
+
+  .photos__item-wrapper {
+    width: auto;
+    margin: 0;
+  }
+
+  .photos__photo {
+    width: 324px;
+    height: 267px;
+
+    &--best {
+      width: 648px;
+      height: 400px;
+    }
+  }
+
+  .photos__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px 20px 17px;
+    background-color: $light-background;
+    margin-top: -4px;
+  }
+
+  .photos__title {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .photos__list {
+    width: 1200px;
+  }
+
+  .photos__item {
+    position: relative;
+    width: 400px;
+
+    &--best {
+      width: 1200px;
+    }
+  }
+
+  .photos__photo {
+    width: 400px;
+    height: 267px;
+
+    &--best {
+      width: 1200px;
+      height: 400px;
+    }
+  }
+
+  .photos__item-wrapper {
+    margin-top: -5px;
+  }
+  
+  .photos__description {
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .photos__title {
+    color: #ffffff;
+  }
+
+  .photos__author {
+    color: #ffffff;
+  }
+
+  .photos__like {
+    background-image: url("../img/icon-like-white.svg");
+  }
+
+  .photos__like-amount {
+    color: #ffffff;
+  }
+}
