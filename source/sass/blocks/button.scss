@@ -1,5 +1,6 @@
 .button {
   display: block;
+  box-sizing: border-box;
   font-family: inherit;
   text-align: center;
   font-weight: 700;
@@ -9,6 +10,8 @@
   text-decoration: none;
   cursor: pointer;
   background-color: $main-accent-color;
+  border: none;
+  outline: none;
 
   &:hover, &:focus {
     background-color: $main-accent-color-medium;
